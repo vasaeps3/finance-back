@@ -54,7 +54,7 @@ export class LocalStrategyController {
     const accesToken = this.jwtCustomService.generateUserToken(_.pick(existingUser, ['id']));
 
     res.set('Authorization', accesToken);
-    res.status(HttpStatus.OK).json();
+    res.status(HttpStatus.OK).json(accesToken);
   }
 
   @Get('test')
